@@ -7,20 +7,41 @@ const input_id = "input_field";
 //     return <button onClick={props.submitSearch}>Search</button>
 // }
 
+function SearchQuery(query, lat, lon) {
+    return {
+        query,
+        location: {
+            lat, lon
+        }
+    }
+};
 const SearchQueryKey = "searchQuery";
 
 class Form extends React.PureComponent {
     state = {
-      searchQuery: ''
+      searchQuery: '32.819913, 34.998619'
     }
 
-    constructor(props) {
-        super(props);
-    }
-  
     handleSubmit = event => {
         event.preventDefault();
-        this.props.onSubmit(this.state.searchQuery);
+        const query = this.state.searchQuery;
+        const splitForLocation = query.split(',');
+
+        if (splitForLocation === query || !this.validGeoLocation(splitForLocation)) {
+            this.props.onSubmit(SearchQuery(this.state.searchQuery));
+        } else {
+            this.props.onSubmit(SearchQuery(null, splitForLocation[0].trim(), splitForLocation[1].trim()));
+        }
+    }
+
+    validGeoLocation(strArray) {
+        if (!Array.isArray(strArray) || strArray.length != 2) {
+            return false;
+        }
+        if (isNaN(strArray[0]) || isNaN(strArray[1])) { //  32.819913, 34.998619
+            return false;
+        }
+        return true;
     }
   
     render() {
@@ -38,55 +59,37 @@ class Form extends React.PureComponent {
     }
   }
 
-const Results = props => {
-    const {weatherData} = props;
-    if (!weatherData || !weatherData.main) {
-        return <div>N/A</div>
-    }
-    const icon = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
-    const weather = weatherData.main;
-    const weatherDescription = weatherData.weather[0].description;
-    return <div>
-        <img src={icon}></img>
-        <div>Temprature: {weather.temp} deg</div>
-        <div>{weatherDescription}</div>
-    </div>
-}
-
 class App extends React.PureComponent {
     state = {
-        weatherData: {}
+        data: {}
     }
 
     constructor(props) {
         super(props);
-        const query = localStorage.getItem(SearchQueryKey);
+
+        const query = JSON.parse(localStorage.getItem(SearchQueryKey));
         if (query) {
             this.search(query);
         }
     }
 
     search = (searchQuery) => {
-        fetch('http://api.openweathermap.org/data/2.5/weather?q=' + searchQuery + '&appid=4b5c2816e4b0b19d58dc1511e8d35730&units=metric') // lat=35&lon=139&
-        .then((response) => {
-            return response.json();
-        }).then((json) => {
+        QuerySearcher.search(searchQuery).then ((json) => {
             this.setState({
-                weatherData: json
+                data: json
             })    
         });
     }
 
     onSearchClicked = (searchQuery) => {
-        localStorage.setItem(SearchQueryKey, searchQuery);
+        localStorage.setItem(SearchQueryKey, JSON.stringify(searchQuery));
         this.search(searchQuery);
     }
 
     render() {
         return <div>
             <Form onSubmit={this.onSearchClicked}/>
-                {/* <InputField/><SearchButton onClick={this.onSearchClicked}/> */}
-                <Results weatherData={this.state.weatherData}/>
+                <Results data={this.state.data}/>
             </div>        
     }
 }
