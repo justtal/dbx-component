@@ -1,20 +1,3 @@
-const input_id = "input_field";
-
-// const InputField = props => {
-//     return <input placeholder='Location to seek'></input>
-// }
-// const SearchButton = props => {
-//     return <button onClick={props.submitSearch}>Search</button>
-// }
-
-function SearchQuery(query, lat, lon) {
-    return {
-        query,
-        location: {
-            lat, lon
-        }
-    }
-};
 const SearchQueryKey = "searchQuery";
 
 class Form extends React.PureComponent {
