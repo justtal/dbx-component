@@ -24,9 +24,9 @@ const QuerySearcher = {
     search: function(searchQuery) {
         let getQuery = '';
         if (searchQuery.query) {
-            getQuery = 'http://api.worldweatheronline.com/premium/v1/marine.ashx?key=0894c92fc9f949e3827133843191104&format=json&q=' + searchQuery.query
+            getQuery = 'https://api.worldweatheronline.com/premium/v1/marine.ashx?key=0894c92fc9f949e3827133843191104&format=json&q=' + searchQuery.query
         } else if (searchQuery.location) {
-            getQuery = 'http://api.worldweatheronline.com/premium/v1/marine.ashx?key=0894c92fc9f949e3827133843191104&format=json&q=' + searchQuery.location.lat + ',' + searchQuery.location.lon;
+            getQuery = 'https://api.worldweatheronline.com/premium/v1/marine.ashx?key=0894c92fc9f949e3827133843191104&format=json&q=' + searchQuery.location.lat + ',' + searchQuery.location.lon;
         }
         if (!getQuery) {
             return;
