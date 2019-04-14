@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="24px" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
+    <title>B542BB00-06D9-47DA-8594-2BDBA62D5662@1.00x</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="19.0584097 20.1078175 19.0584097 6 16.7071067 6 16.7071067 20.1078175 8 20.1172418 17.8827582 30 27.7729397 20.1098185"></polygon>
+    </defs>
+    <g id="Dashboard-x_2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-68.000000, -263.000000)">
+            <g id="WeatherIcon/Arrow" transform="translate(60.000000, 257.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="arrow" fill="#B6C1CD" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

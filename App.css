@@ -1,3 +1,197 @@
-.header {
-    color: #f10000;
+body {
+    width: 636px
+}
+.temprature {
+    display: inline-block;
+    color: rgb(22, 45, 61);
+    font-family: HelveticaNeue-Light;
+    font-size: 90px;
+    font-weight: 300;
+    height: 96px;
+    line-height: 96px;
+    width: 131px;
+    vertical-align: top;
+}
+
+.selectedButton {
+    color: rgb(255, 255, 255);
+    font-family: HelveticaNeue-Roman;
+    font-size: 14px;
+    background: rgb(56, 153, 236);
+    border-radius: 4px 4px 4px 4px;
+    height: 24px;
+    outline: none;
+    width: 24px;
+}
+
+.notSelectedButton {
+    color: rgb(122, 146, 165);
+    font-family: HelveticaNeue-Roman;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 4px 4px 4px 4px;
+    border: 0px;
+    font-size: 14px;
+    height: 24px;
+    outline: none;
+    width: 24px;
+}
+
+.today_details_container {
+    display: inline-flex;
+    vertical-align: middle;
+    margin-top: 8px;
+    float: right
+}
+
+.seperator {
+    background: rgb(223, 229, 235);
+    border-radius: 0px 0px 0px 0px;
+    height: 1px;
+}
+
+.week_title {
+    color: rgb(22, 45, 61);
+    font-family: HelveticaNeue-Roman;
+    font-size: 14px;
+    font-weight: normal;
+    height: 18px;
+    line-height: 18px;
+    width: 35px;
+}
+
+.days_container {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 8px;
+    flex-grow: 1;
+}
+
+.days_container .day_of_week {
+    display: inline-block;
+    height: 98px;
+    vertical-align: top;
+    text-align: center;
+    flex: 100%;
+}
+
+.days_container .day_of_week .day_title {
+    color: rgb(22, 45, 61);
+    font-family: HelveticaNeue-Medium;
+    font-size: 12px;
+    font-weight: 500;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+}
+
+.days_container .day_of_week .day_icon {
+    width: 36px;
+    display: inline-block;
+    /* background: rgb(253, 177, 12); */
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.days_container .day_of_week .day_icon img {
+    height: 24px;
+    width: 24px;
+    /* background: rgb(253, 177, 12); */
+}
+
+.days_container .day_of_week .day_details {
+    height: 15px;
+    color: rgb(22, 45, 61);
+    font-size: 12px;
+    font-family: HelveticaNeue-Medium;
+    font-weight: 500;
+    text-align: center;
+    line-height: 15px;
+}
+
+.days_container .day_of_week .day_details div {
+    display: inline-block;
+    width: 20px;
+}
+
+.days_container .day_of_week div.low {
+    color: rgb(120, 120, 120);
+}
+
+.today_details {
+    
+    flex: 100%;
+    color: rgb(22, 45, 61);
+    font-family: HelveticaNeue-Roman;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+    height: 72px;
+    width: fit-content;
+    text-align: center;
+}
+
+.today_details img {
+    height: 30px;
+    width: 39px;
+}
+
+.today_details div {
+    text-align: center;
+    color: rgb(22, 45, 61);
+    font-family: HelveticaNeue-Roman;
+    font-size: 14px;
+    font-weight: normal;
+    height: 18px;
+    line-height: 18px;
+    width: 48px;
+}
+.header .title {
+    display: inline-block;
+    color: rgb(22, 45, 61);
+    font-family: HelveticaNeue-Roman;
+    font-size: 14px;
+    font-weight: normal;
+    height: 18px;
+    line-height: 18px;
+    width: 80px;
+}
+
+.header .units_buttons {
+    float: right;
+}
+
+.header .details {
+    color: rgb(87, 112, 131);
+    font-family: HelveticaNeue-Medium;
+    font-size: 10px;
+    font-weight: 500;
+    height: 18px;
+    letter-spacing: 1.2px;
+    line-height: 18px;
+    text-transform: uppercase;
+    width: 104px;
+}
+
+.header .today {
+    text-align: center;
+    width: fit-content;
+    margin-top: 24px;
+}
+
+.header .today .today_image {
+    height: 36px;
+    width: 36px;
+    vertical-align: middle;
+}
+
+.header .today .today_title {
+    color: rgb(122, 146, 165);
+    font-family: HelveticaNeue-Roman;
+    font-size: 14px;
+    margin-left: 12px;
+    font-weight: normal;
+    height: 18px;
+    line-height: 18px;
+    width: 86px;
 }

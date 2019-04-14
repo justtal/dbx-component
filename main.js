@@ -37,7 +37,7 @@ class Form extends React.PureComponent {
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} style={{height: '100px'}}>
           <input type="text"
             value={this.state.searchQuery}
             onChange={event => this.setState({searchQuery: event.target.value})}
@@ -80,7 +80,7 @@ class App extends React.PureComponent {
     render() {
         return <div>
             <Form onSubmit={this.onSearchClicked}/>
-                <Results data={this.state.data}/>
+                <WidgetComponent data={this.state.data}/>
             </div>        
     }
 }

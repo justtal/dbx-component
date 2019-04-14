@@ -1,4 +1,4 @@
-const Results = props => {
+const WidgetComponent = props => {
     const weatherData = props.data;
     if (!weatherData || !weatherData.main) {
         return <div>N/A</div>
