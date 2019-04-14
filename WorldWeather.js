@@ -1,3 +1,4 @@
+const UnitsTypeKey = "unitsType";
 
 class WidgetComponent extends React.Component {
     state = {
@@ -7,16 +8,15 @@ class WidgetComponent extends React.Component {
     constructor(props) {
         super(props);
 
-        const units = localStorage.getItem('units');
+        const units = localStorage.getItem(UnitsTypeKey);
         const type = (units && units.type) || 'metric';
 
         this.state = { units: Units[type] };
-        // const units = (localStorage.getItem('units') ? JSON.parse(localStorage.getItem('units')) : Units.metric)
     }
 
     onUnitsChanged = (newUnits) => {
         this.setState({ units: newUnits });
-        localStorage.setItem('units', JSON.stringify(newUnits))
+        localStorage.setItem(UnitsTypeKey, JSON.stringify(newUnits))
     }
 
     render() {
