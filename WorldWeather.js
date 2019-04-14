@@ -8,10 +8,10 @@ class WidgetComponent extends React.Component {
     constructor(props) {
         super(props);
 
-        // const units = localStorage.getItem(UnitsTypeKey);
-        // const type = (units && units.type) || 'metric';
+        const units = localStorage.getItem(UnitsTypeKey);
+        const type = (units && units.type) || 'metric';
 
-        this.state = { units: Units.metric };
+        this.state = { units: Units[type] };
     }
 
     onUnitsChanged = (newUnits) => {
