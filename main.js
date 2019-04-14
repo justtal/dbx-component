@@ -6,7 +6,7 @@ function SearchQuery(query, lat, lon) {
         }
     }
 };
-const SearchQueryKey = "searchQuery";
+const SearchQueryKey = "searchQueryLatLon";
 
 class Form extends React.PureComponent {
     state = {
