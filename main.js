@@ -58,7 +58,7 @@ class App extends React.PureComponent {
     constructor(props) {
         super(props);
 
-        const searchQueryStorage = localStorage.getItem(SearchQueryKey);
+        const searchQueryStorage = '';//localStorage.getItem(SearchQueryKey);
         let query;
         if (searchQueryStorage && searchQueryStorage.startsWith('{')) {
             query = JSON.parse(searchQueryStorage);
