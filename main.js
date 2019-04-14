@@ -37,7 +37,7 @@ class Form extends React.PureComponent {
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit} style={{height: '100px'}}>
+        <form onSubmit={this.handleSubmit}>
           <input type="text"
             value={this.state.searchQuery}
             onChange={event => this.setState({searchQuery: event.target.value})}
@@ -82,10 +82,20 @@ class App extends React.PureComponent {
     }
 
     render() {
+        
         return <div>
-            {/* <Form onSubmit={this.onSearchClicked}/> */}
-                <WidgetComponent data={this.state.data}/>
-            </div>        
+            {this.renderFormIfRequired()}
+            <WidgetComponent data={this.state.data}/>
+        </div>
+    }
+
+    renderFormIfRequired = () => {
+        const searchQueryStorage = localStorage.getItem(SearchQueryKey);
+        if (searchQueryStorage) {
+            return;
+        }
+
+        return <Form onSubmit={this.onSearchClicked}/>
     }
 }
 

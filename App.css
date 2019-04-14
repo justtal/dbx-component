@@ -228,6 +228,20 @@
     float: right;
 }
 
+form input {
+    width: 150px;
+    height: 24px;
+    margin-right: 16px;
+}
+form button {
+    width: 80px;
+    height: 30px;
+    color: rgba(255, 255, 255, 255);
+    background: rgb(56, 153, 236);
+    border-radius: 4px 4px 4px 4px;
+    outline: none;
+}
+
 .header .details {
     color: rgb(87, 112, 131);
     font-family: HelveticaNeue-Medium;
