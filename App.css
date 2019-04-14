@@ -11,17 +11,18 @@ body {
     line-height: 96px;
     width: 131px;
     vertical-align: top;
+    margin-right: 88px;
 }
 
 .selectedButton {
-    color: rgb(255, 255, 255);
     font-family: HelveticaNeue-Roman;
     font-size: 14px;
+    color: rgba(255, 255, 255, 255);
     background: rgb(56, 153, 236);
     border-radius: 4px 4px 4px 4px;
     height: 24px;
-    outline: none;
     width: 24px;
+    outline: none;
 }
 
 .notSelectedButton {
@@ -36,11 +37,16 @@ body {
     width: 24px;
 }
 
+.today_container {
+    display: flex;
+}
+
 .today_details_container {
     display: inline-flex;
     vertical-align: middle;
     margin-top: 8px;
-    float: right
+    float: right;
+    justify-content: space-between;
 }
 
 .seperator {
@@ -60,10 +66,10 @@ body {
 }
 
 .days_container {
-    display: inline-flex;
-    width: 100%;
+    display: flex;
     margin-top: 8px;
     flex-grow: 1;
+    justify-content: space-between;
 }
 
 .days_container .day_of_week {
@@ -71,7 +77,6 @@ body {
     height: 98px;
     vertical-align: top;
     text-align: center;
-    flex: 100%;
 }
 
 .days_container .day_of_week .day_title {
@@ -111,7 +116,7 @@ body {
 
 .days_container .day_of_week .day_details div {
     display: inline-block;
-    width: 20px;
+    width: 24px;
 }
 
 .days_container .day_of_week div.low {
@@ -119,8 +124,6 @@ body {
 }
 
 .today_details {
-    
-    flex: 100%;
     color: rgb(22, 45, 61);
     font-family: HelveticaNeue-Roman;
     font-size: 14px;
@@ -144,7 +147,6 @@ body {
     font-weight: normal;
     height: 18px;
     line-height: 18px;
-    width: 48px;
 }
 .header .title {
     display: inline-block;

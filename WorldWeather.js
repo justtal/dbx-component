@@ -10,7 +10,7 @@ class WidgetComponent extends React.Component {
         const units = localStorage.getItem('units');
         const type = (units && units.type) || 'metric';
 
-        this.state = {units: Units[type]};
+        this.state = { units: Units[type] };
         // const units = (localStorage.getItem('units') ? JSON.parse(localStorage.getItem('units')) : Units.metric)
     }
 
@@ -27,8 +27,10 @@ class WidgetComponent extends React.Component {
         const maxTempProp = `maxtemp${this.state.units.temp}`;
         return <div>
             <Header onUnitsChanged={this.onUnitsChanged} units={this.state.units} weather={today} />
-            <div className='temprature'>{today[maxTempProp]}&#176;</div>
-            <TodayDetailedInfo weather={today} units={this.state.units} />
+            <div className='today_container'>
+                <div className='temprature'>{today[maxTempProp]}&#176;</div>
+                <TodayDetailedInfo weather={today} units={this.state.units} />
+            </div>
             <div className='week_title'>Week</div>
             <div className='seperator'></div>
             <WeekDaysLayout weather={restOfWeek} units={this.state.units} />
@@ -86,7 +88,7 @@ const DetailsInfo = props => {
 const WeekDaysLayout = props => {
     return (
         <div className='days_container'>
-            {props.weather.map(weather => <WeekDayComponent key={weather.date} weather={weather} units={props.units}/>)}
+            {props.weather.map(weather => <WeekDayComponent key={weather.date} weather={weather} units={props.units} />)}
         </div>
     )
 }
@@ -94,11 +96,11 @@ const WeekDaysLayout = props => {
 const WeekDayComponent = props => {
     const maxTempProp = `maxtemp${props.units.temp}`;
     const minTempProp = `mintemp${props.units.temp}`;
-    
+
     const weatherCondition = getWeatherCondition(props.weather, props.units);
     return (
         <div className='day_of_week'>
-                {/* <div>{getMostSevereWeatherCode(props.weather)}</div> */}
+            {/* <div>{getMostSevereWeatherCode(props.weather)}</div> */}
             <div className='day_title'>{days[new Date(props.weather.date).getDay()]}</div>
             <div className='day_icon'><img src={weatherCondition.imageSource}></img></div>
             <div className='day_details'>
@@ -115,7 +117,7 @@ function getWeatherCondition(weather, units) {
     const maxSpeed = units == Units.metric ? windSpeed.max * 0.621371 : windSpeed.max;
     if (maxSpeed >= 25) {
         return WeatherConditions.Windy;
-    // } else if (maxSpeed >= 15) {
+        // } else if (maxSpeed >= 15) {
         // return WeatherConditions.Breezy;
     }
     return WeatherConditions[weatherCode];

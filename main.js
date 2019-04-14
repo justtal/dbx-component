@@ -79,7 +79,7 @@ class App extends React.PureComponent {
 
     render() {
         return <div>
-            <Form onSubmit={this.onSearchClicked}/>
+            {/* <Form onSubmit={this.onSearchClicked}/> */}
                 <WidgetComponent data={this.state.data}/>
             </div>        
     }
