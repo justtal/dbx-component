@@ -4,6 +4,7 @@
         max-width: 792px;
         height: fit-content;
         padding: 30px;
+        overflow: auto;
     }
 }
 
@@ -12,6 +13,7 @@
         width: 300px;
         padding: 30px;
         height: fit-content;
+        overflow: auto;
     }
 }
 
