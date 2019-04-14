@@ -88,10 +88,10 @@ class App extends React.PureComponent {
             <WidgetComponent data={this.state.data}/>
         </div>
     }
-
+    
     renderFormIfRequired = () => {
         const searchQueryStorage = localStorage.getItem(SearchQueryKey);
-        if (searchQueryStorage) {
+        if (searchQueryStorage && searchQueryStorage.startsWith('{')) {
             return;
         }
 
