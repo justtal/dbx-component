@@ -16,7 +16,7 @@ class WidgetComponent extends React.Component {
 
     onUnitsChanged = (newUnits) => {
         this.setState({ units: newUnits });
-        localStorage.setItem(UnitsTypeKey, JSON.stringify(newUnits))
+        localStorage.setItem(UnitsTypeKey, (newUnits == Units.metric ? 'metric' : 'imperial'))
     }
 
     render() {
