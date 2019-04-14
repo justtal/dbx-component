@@ -62,7 +62,7 @@ const Header = props => {
 const TodayDetailedInfo = props => {
     const wavesHeight = getRange(props.weather, `swellHeight_${props.units.size}`);
     const humidity = getRange(props.weather, 'humidity');
-    const chanceOfRain = getRange(props.weather, 'chanceofrain');
+    const precipMM = getRange(props.weather, 'precipMM');
     const windSpeedProp = `windspeed${props.units.speed}`;
     const windSpeed = getRange(props.weather, windSpeedProp);
     return (
@@ -71,7 +71,7 @@ const TodayDetailedInfo = props => {
             <DetailsInfo imageSource='./assets/StatIcon_Direction.svg' title={getWindDirection(props.weather)} />
             <DetailsInfo imageSource='./assets/WeatherIcon_Swell.svg' title={wavesHeight.min} details={wavesHeight.max} />
             <DetailsInfo imageSource='./assets/StatIcon_Himi.svg' title={`${humidity.max}\%`} />
-            <DetailsInfo imageSource='./assets/StatIcon_Rain.svg' title={`${chanceOfRain.max}\%`} />
+            <DetailsInfo imageSource='./assets/StatIcon_Rain.svg' title={`${precipMM.max}mm`} />
         </div>)
 }
 

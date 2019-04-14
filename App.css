@@ -1,6 +1,22 @@
-body {
-    width: 636px
+@media only screen and (min-width: 500px) {
+    body {
+        min-width: 636px;
+        max-width: 792px;
+        height: fit-content;
+        max-height: 300px;
+        padding: 30px;
+    }
 }
+
+@media only screen and (max-width: 500px) {
+    body {
+        width: 300px;
+        padding: 30px;
+        height: fit-content;
+        max-height: 300px;
+    }
+}
+
 .temprature {
     display: inline-block;
     color: rgb(22, 45, 61);
@@ -11,7 +27,7 @@ body {
     line-height: 96px;
     width: 131px;
     vertical-align: top;
-    margin-right: 88px;
+    margin-right: 144px;
 }
 
 .selectedButton {
@@ -46,9 +62,35 @@ body {
     vertical-align: middle;
     margin-top: 8px;
     float: right;
+    width: 100%;
     justify-content: space-between;
 }
 
+.today_details {
+    color: rgb(22, 45, 61);
+    font-family: HelveticaNeue-Roman;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+    height: 72px;
+    width: fit-content;
+    text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+    /* .today_details { */
+        /* min-width: 100px; */
+    /* } */
+
+    .today_container {
+        flex-wrap: wrap;
+    }
+
+    .today_details_container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
 .seperator {
     background: rgb(223, 229, 235);
     border-radius: 0px 0px 0px 0px;
@@ -73,7 +115,6 @@ body {
 }
 
 .days_container .day_of_week {
-    display: inline-block;
     height: 98px;
     vertical-align: top;
     text-align: center;
@@ -94,8 +135,8 @@ body {
     display: inline-block;
     /* background: rgb(253, 177, 12); */
     text-align: center;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    /* padding-top: 6px;
+    padding-bottom: 6px; */
 }
 
 .days_container .day_of_week .day_icon img {
@@ -123,15 +164,39 @@ body {
     color: rgb(120, 120, 120);
 }
 
-.today_details {
-    color: rgb(22, 45, 61);
-    font-family: HelveticaNeue-Roman;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 18px;
-    height: 72px;
-    width: fit-content;
-    text-align: center;
+@media only screen and (min-width: 500px) {
+    .days_container {
+        display: flex;
+    }
+    .days_container .day_of_week {
+        display: block;
+        justify-content: space-between;
+    }
+    .days_container .day_of_week .day_title {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .days_container {
+        display: block;
+    }
+    .days_container .day_of_week {
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+    .days_container .day_of_week .day_title {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 24px;
+    }
+
+    .days_container .day_of_week .day_details {
+        line-height: 24px;
+    }
 }
 
 .today_details img {
