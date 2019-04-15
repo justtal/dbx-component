@@ -3,14 +3,14 @@
         min-width: 636px;
         max-width: 792px;
         height: fit-content;
-        padding: 30px;
         overflow: auto;
+        padding: 30px;
     }
 }
 
 @media only screen and (max-width: 500px) {
     body {
-        width: 300px;
+        width: 240px;
         padding: 30px;
         height: fit-content;
         overflow: auto;
