@@ -31,7 +31,7 @@
 }
 
 .selectedButton {
-    font-family: HelveticaNeue-Roman;
+    font-family: HelveticaNeue;
     font-size: 14px;
     color: rgba(255, 255, 255, 255);
     background: rgb(56, 153, 236);
@@ -43,7 +43,7 @@
 
 .notSelectedButton {
     color: rgb(122, 146, 165);
-    font-family: HelveticaNeue-Roman;
+    font-family: HelveticaNeue;
     background: rgba(255, 255, 255, 0);
     border-radius: 4px 4px 4px 4px;
     border: 0px;
@@ -68,7 +68,7 @@
 
 .today_details {
     color: rgb(22, 45, 61);
-    font-family: HelveticaNeue-Roman;
+    font-family: HelveticaNeue;
     font-size: 14px;
     font-weight: normal;
     line-height: 18px;
@@ -99,7 +99,7 @@
 
 .week_title {
     color: rgb(22, 45, 61);
-    font-family: HelveticaNeue-Roman;
+    font-family: HelveticaNeue;
     font-size: 14px;
     font-weight: normal;
     height: 18px;
@@ -207,7 +207,7 @@
 .today_details div {
     text-align: center;
     color: rgb(22, 45, 61);
-    font-family: HelveticaNeue-Roman;
+    font-family: HelveticaNeue;
     font-size: 14px;
     font-weight: normal;
     height: 18px;
@@ -216,7 +216,7 @@
 .header .title {
     display: inline-block;
     color: rgb(22, 45, 61);
-    font-family: HelveticaNeue-Roman;
+    font-family: HelveticaNeue;
     font-size: 14px;
     font-weight: normal;
     height: 18px;
@@ -267,7 +267,7 @@ form button {
 
 .header .today .today_title {
     color: rgb(122, 146, 165);
-    font-family: HelveticaNeue-Roman;
+    font-family: HelveticaNeue;
     font-size: 14px;
     margin-left: 12px;
     font-weight: normal;
