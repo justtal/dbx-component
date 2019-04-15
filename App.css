@@ -87,8 +87,10 @@
     }
 
     .today_details_container {
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        /* flex-wrap: wrap; */
+        /* justify-content: space-between; */
     }
 }
 .seperator {
